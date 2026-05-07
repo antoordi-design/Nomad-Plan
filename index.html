@@ -310,7 +310,12 @@
 <section class="wrap signup-section">
   <h2>Not ready for $39? <span>Start free.</span></h2>
   <p class="lede-2">Drop your email — I'll send you the Runway Calculator. Plug in your savings and burn rate, see your true cliff date. The free taste of the plan.</p>
-  <a class="btn" href="https://preview.mailerlite.io/forms/2326432/186800071436666420/share" target="_blank" rel="noopener">Send me the calculator</a>
+  <form class="signup-form" action="https://assets.mailerlite.com/jsonp/2326432/forms/186800071436666420/subscribe" method="post" target="_blank">
+    <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="email">
+    <button type="submit">Send me the calculator</button>
+    <input type="hidden" name="ml-submit" value="1">
+    <input type="hidden" name="anticsrf" value="true">
+  </form>
   <p class="signup-note">Free forever · No spam · Unsubscribe in one click</p>
 </section>
 
