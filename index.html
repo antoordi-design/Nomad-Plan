@@ -312,7 +312,8 @@
 <section class="wrap signup-section">
   <h2>Not ready for $39? <span>Start free.</span></h2>
   <p class="lede-2">Drop your email — I'll send you the Runway Calculator. Plug in your savings and burn rate, see your true cliff date. The free taste of the plan.</p>
-  <form class="signup-form" id="signup-form" action="https://assets.mailerlite.com/jsonp/2326432/forms/186800071436666420/subscribe" method="post">
+  <iframe name="ml_iframe" id="ml_iframe" style="display:none;width:0;height:0;border:0" aria-hidden="true"></iframe>
+  <form class="signup-form" id="signup-form" action="https://assets.mailerlite.com/jsonp/2326432/forms/186800071436666420/subscribe" method="post" target="ml_iframe">
     <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="email">
     <button type="submit">Send me the calculator</button>
     <input type="hidden" name="ml-submit" value="1">
@@ -339,21 +340,21 @@
 <script>
 (function(){
   var form = document.getElementById('signup-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
+  var iframe = document.getElementById('ml_iframe');
+  var success = document.getElementById('signup-success');
+  if (!form || !iframe || !success) return;
+  form.addEventListener('submit', function(){
     var btn = form.querySelector('button[type="submit"]');
-    var origText = btn.textContent;
     btn.textContent = 'Sending...';
     btn.disabled = true;
-    fetch(form.action, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: new FormData(form)
-    }).finally(function(){
+  });
+  iframe.addEventListener('load', function(){
+    // Skip the initial blank load
+    if (iframe.dataset.loaded === '1') {
       form.style.display = 'none';
-      document.getElementById('signup-success').style.display = 'block';
-    });
+      success.style.display = 'block';
+    }
+    iframe.dataset.loaded = '1';
   });
 })();
 </script>
