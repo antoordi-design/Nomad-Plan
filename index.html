@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 90-Day Nomad Plan — Quit your job. Live anywhere.</title>
+<meta name="description" content="A day-by-day calendar to leave your corporate job and live abroad on $3,000/mo. Without burning your savings or your career.">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#141414;
+    --ink:#f4f4f4;
+    --muted:#a0a0a0;
+    --line:#222;
+    --accent:#d4ff3d;
+    --accent-soft:rgba(212,255,61,0.12);
+    --paper:#fafaf5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .nav{padding:24px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase}
+  .nav .brand{color:var(--accent);font-weight:700}
+  /* HERO */
+  .hero{padding:50px 0 70px;border-bottom:1px solid var(--line)}
+  .pill{display:inline-block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(212,255,61,0.4);padding:5px 12px;border-radius:100px;margin-bottom:30px}
+  h1{font-size:clamp(38px,7vw,68px);line-height:1.0;letter-spacing:-0.03em;font-weight:800;margin-bottom:24px}
+  h1 span{color:var(--accent)}
+  .lede{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:600px;line-height:1.5;margin-bottom:36px}
+  .cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+  .btn{display:inline-block;background:var(--accent);color:#0a0a0a;font-weight:800;font-size:16px;padding:18px 32px;border-radius:100px;text-decoration:none;letter-spacing:-0.01em;transition:transform 0.15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-row{display:flex;flex-direction:column;gap:6px}
+  .price{font-size:14px;color:var(--muted)}
+  .price strike{color:#666;margin-right:8px}
+  .price b{color:var(--ink)}
+  .trust{display:flex;gap:24px;flex-wrap:wrap;margin-top:30px;font-size:13px;color:var(--muted)}
+  .trust span::before{content:"·";color:var(--accent);margin-right:8px}
+  .trust span:first-child::before{display:none}
+  /* PROBLEM */
+  .section{padding:70px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(28px,4.5vw,42px);line-height:1.1;letter-spacing:-0.02em;font-weight:800;margin-bottom:30px}
+  h2 span{color:var(--accent)}
+  .lede-2{font-size:17px;color:var(--muted);max-width:580px;margin-bottom:24px;line-height:1.6}
+  .you-list{list-style:none;display:flex;flex-direction:column;gap:14px;max-width:580px;margin-top:24px}
+  .you-list li{padding-left:28px;position:relative;color:#d8d8d8;font-size:16px}
+  .you-list li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:2px;background:var(--accent)}
+  /* WHATS-INSIDE */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+  @media (max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--bg-2);border:1px solid var(--line);padding:24px 22px;border-radius:14px}
+  .card .ix{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:0.15em;margin-bottom:10px}
+  .card h3{font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.25}
+  .card p{font-size:14px;color:var(--muted);line-height:1.55}
+  /* WHAT YOU GET */
+  .stack{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+  .stack-row{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px dashed var(--line)}
+  .stack-row .name{font-size:16px;font-weight:600}
+  .stack-row .desc{font-size:13px;color:var(--muted);margin-top:3px;max-width:80%}
+  .stack-row .val{font-size:15px;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+  .stack-total{display:flex;justify-content:space-between;padding-top:24px;font-weight:800;font-size:18px}
+  .stack-total .val{color:var(--accent);text-decoration:line-through;font-weight:600}
+  .stack-price{display:flex;justify-content:space-between;font-size:22px;font-weight:800;margin-top:6px}
+  .stack-price .val{color:var(--accent)}
+  /* WHO */
+  .who{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+  @media (max-width:640px){.who{grid-template-columns:1fr}}
+  .who div{background:var(--bg-2);border:1px solid var(--line);padding:24px;border-radius:14px}
+  .who h4{font-size:13px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:14px;font-weight:700}
+  .who ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .who li{font-size:14px;color:#d0d0d0;padding-left:18px;position:relative;line-height:1.5}
+  .who.pro li::before{content:"+";color:var(--accent);position:absolute;left:0;top:0;font-weight:700}
+  .who.con li::before{content:"−";color:#666;position:absolute;left:0;top:0;font-weight:700}
+  /* GUARANTEE */
+  .guarantee{background:var(--accent-soft);border:1px solid rgba(212,255,61,0.25);padding:32px;border-radius:14px;margin-top:30px}
+  .guarantee h3{font-size:20px;font-weight:800;margin-bottom:10px}
+  .guarantee p{font-size:15px;color:#d8d8d8;line-height:1.6}
+  /* FAQ */
+  .faq{margin-top:24px;display:flex;flex-direction:column;gap:8px}
+  details{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  details[open]{border-color:rgba(212,255,61,0.3)}
+  summary{font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::after{content:"+";color:var(--accent);font-weight:700;font-size:20px}
+  details[open] summary::after{content:"−"}
+  details p{margin-top:14px;color:#c8c8c8;font-size:14px;line-height:1.6}
+  /* FINAL CTA */
+  .final{padding:90px 0;text-align:center;border-bottom:1px solid var(--line)}
+  .final h2{font-size:clamp(34px,6vw,56px);margin-bottom:20px}
+  .final .lede-2{margin-left:auto;margin-right:auto;text-align:center}
+  .final .btn{margin-top:20px;font-size:18px;padding:20px 40px}
+  .final .price{margin-top:18px}
+  /* FOOTER */
+  footer{padding:40px 0 60px;font-size:13px;color:#666;text-align:center}
+  footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header class="wrap nav">
+  <span class="brand">VICTOU</span>
+  <span>Nomad Plan · 2026</span>
+</header>
+
+<!-- HERO -->
+<section class="wrap hero">
+  <div class="pill">90-DAY EXIT PLAN · 2026 EDITION</div>
+  <h1>Quit your job in 90 days. <span>Live anywhere.</span></h1>
+  <p class="lede">A day-by-day calendar to walk out of your corporate job and live abroad on $3,000/mo. Without burning your savings or torching your career.</p>
+  <div class="cta-row">
+    <div class="btn-row">
+      <a class="btn" href="#buy">Get the plan — $39</a>
+      <span class="price"><strike>$89</strike> <b>$39</b> · launch price · instant download</span>
+    </div>
+  </div>
+  <div class="trust">
+    <span>9 sections · 24-page PDF</span>
+    <span>15-country picker</span>
+    <span>Runway calculator</span>
+    <span>2026 visa cheat sheet</span>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="wrap section">
+  <h2>You've been "planning to leave" for two years.</h2>
+  <p class="lede-2">Every Sunday night you scroll Lisbon apartments. Every Monday you sit through standups about Q3 OKRs. The plan has been three months away for 24 months.</p>
+  <p class="lede-2">It's not because you don't want it. It's because nobody's given you the actual moves. Just listicles called "9 best digital nomad jobs" and Instagram reels of beaches.</p>
+  <ul class="you-list">
+    <li>You don't know how much runway you actually need.</li>
+    <li>You don't know which country fits you (and which one will eat your savings).</li>
+    <li>You don't know how to convert your current job to remote — or replace the income.</li>
+    <li>You're scared of telling your boss and worse, scared of coming back broke.</li>
+  </ul>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="wrap section">
+  <h2>Inside The 90-Day <span>Nomad Plan</span></h2>
+  <p class="lede-2">Not theory. A calendar. Open to Week 1 today, follow the moves, board the plane on Day 90.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="ix">SECTION 1</div>
+      <h3>The honest numbers</h3>
+      <p>Three real cost tiers — Lean, Comfortable, Real Life — with the line items most blogs hide (visa fees, deposits, gear refresh, "buffer for when something breaks").</p>
+    </div>
+    <div class="card">
+      <div class="ix">SECTION 2</div>
+      <h3>The Runway Calculator</h3>
+      <p>Plug in your savings, monthly burn, and target country. Get your true cliff edge — the date your money runs out if income doesn't show up.</p>
+    </div>
+    <div class="card">
+      <div class="ix">SECTION 3</div>
+      <h3>5 fastest paths to remote income</h3>
+      <p>Convert your current job, productize your skill, cold outbound, digital products, or pivot to a remote-first company. Each with the time-to-money estimate.</p>
+    </div>
+    <div class="card">
+      <div class="ix">SECTION 4</div>
+      <h3>The Country Picker</h3>
+      <p>15 countries scored on cost, visa, internet, safety, community, vibes. So you don't pick on Instagram aesthetics and arrive somewhere broke and bored.</p>
+    </div>
+    <div class="card">
+      <div class="ix">SECTION 5</div>
+      <h3>The 90-day calendar</h3>
+      <p>Week 1 to Week 13. What you save, what you book, who you tell, what you pack. Day-by-day so the plan actually moves.</p>
+    </div>
+    <div class="card">
+      <div class="ix">SECTION 6</div>
+      <h3>2026 visa cheat sheet</h3>
+      <p>Portugal D8, Spain DNV, Mexico, Croatia, Estonia. Income thresholds, processing time, what you actually need to apply.</p>
+    </div>
+    <div class="card">
+      <div class="ix">SECTION 7</div>
+      <h3>"What to tell your boss"</h3>
+      <p>Two scripts: the "convert me to remote" pitch, and the clean resignation. Word-for-word.</p>
+    </div>
+    <div class="card">
+      <div class="ix">SECTION 8 + 9</div>
+      <h3>Pre-departure + bail-out plan</h3>
+      <p>Checklist for the last 30 days at home, the first 30 days abroad, and the bail-out plan in case it doesn't work — so you can leave bravely, not recklessly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="wrap section">
+  <h2>What you get for $39</h2>
+  <div class="stack">
+    <div class="stack-row">
+      <div>
+        <div class="name">The 90-Day Nomad Plan (24-page PDF)</div>
+        <div class="desc">Designed and printable. Read on flight, mark on couch.</div>
+      </div>
+      <div class="val">$39</div>
+    </div>
+    <div class="stack-row">
+      <div>
+        <div class="name">Runway Calculator (live spreadsheet)</div>
+        <div class="desc">Coming Week 2. Plug in your numbers, get your cliff date.</div>
+      </div>
+      <div class="val">included</div>
+    </div>
+    <div class="stack-row">
+      <div>
+        <div class="name">15-Country Picker scorecard</div>
+        <div class="desc">Sort by cost, visa, internet. The shortlist that matches you.</div>
+      </div>
+      <div class="val">included</div>
+    </div>
+    <div class="stack-row">
+      <div>
+        <div class="name">"Tell your boss" + resignation scripts</div>
+        <div class="desc">Two scripts so the conversation doesn't break you.</div>
+      </div>
+      <div class="val">included</div>
+    </div>
+    <div class="stack-row">
+      <div>
+        <div class="name">2026 visa updates (free for life)</div>
+        <div class="desc">Visa rules change. You get the updates — no extra cost.</div>
+      </div>
+      <div class="val">included</div>
+    </div>
+    <div class="stack-price">
+      <div>Today's price</div>
+      <div class="val">$39</div>
+    </div>
+  </div>
+  <div style="margin-top:30px;text-align:center">
+    <a class="btn" href="#buy" id="buy">Get the plan — $39</a>
+    <p class="price" style="margin-top:14px">Instant download · Pay once · Updates free for life</p>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="wrap section">
+  <h2>Honest about who this is for</h2>
+  <div class="who">
+    <div class="pro">
+      <h4>This is for you if</h4>
+      <ul>
+        <li>You have a corporate job (or recent one) and 5–20k saved</li>
+        <li>You've been "planning to leave" for over a year</li>
+        <li>You're 25–45 and want a real plan, not a vibes board</li>
+        <li>You want to leave bravely, not recklessly</li>
+        <li>You'd rather have a runway date than a Pinterest moodboard</li>
+      </ul>
+    </div>
+    <div class="con">
+      <h4>Skip this if</h4>
+      <ul>
+        <li>You already live abroad and have remote income</li>
+        <li>You want a hostel-hopping backpacker guide</li>
+        <li>You think "manifestation" is a strategy</li>
+        <li>You won't open the file (it's a calendar, not a magic spell)</li>
+        <li>You want someone to do the work for you</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="wrap section">
+  <h2>The 30-day "open it" guarantee</h2>
+  <div class="guarantee">
+    <h3>Open it within 30 days. Try the Runway Calculator. Read Sections 1–3.</h3>
+    <p>If you don't have a clearer picture of your numbers, your country shortlist, and your income path than you did before — email me and I'll refund you. No DMs, no quiz, no "tell me why." Just a refund.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="wrap section">
+  <h2>Common questions</h2>
+  <div class="faq">
+    <details>
+      <summary>I have less than $5k saved. Is this still for me?</summary>
+      <p>Yes — Section 2 builds your runway plan from wherever you start. The 90-day calendar adjusts: more weeks on the income engine, fewer on logistics. The plan is designed for 5–20k, but if you're below 5k, the timeline stretches and the calendar tells you exactly where.</p>
+    </details>
+    <details>
+      <summary>I don't have a remote-friendly job. Does this still work?</summary>
+      <p>Section 3 covers five income paths. Two of them assume you don't have a remote job today. Cold-outbound services and digital products both have working examples and time-to-money estimates.</p>
+    </details>
+    <details>
+      <summary>I have a partner / kid. Does this work for couples?</summary>
+      <p>The runway calculator handles two people (and a child). Section 4's country picker has a "family-friendly" filter. Section 5's calendar has add-ons for visa applications with dependents.</p>
+    </details>
+    <details>
+      <summary>What if I get there and hate it?</summary>
+      <p>That's exactly what Section 9 (the bail-out plan) is for. We pre-build the "I'm coming back" path so you can leave bravely instead of postponing forever. Coming back is not a failure mode.</p>
+    </details>
+    <details>
+      <summary>Why $39 and not free?</summary>
+      <p>Because you've already read the free version on Reddit and Medium for two years and you still haven't moved. The price is a commitment device. If $39 changes your mind, this isn't your plan.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="wrap final">
+  <h2>You're three months from <span>"I live in Lisbon now."</span></h2>
+  <p class="lede-2">Or you can read another reel about it next Sunday at 9pm. Your call.</p>
+  <a class="btn" href="#buy">Get the plan — $39</a>
+  <p class="price">Instant download · 30-day refund · Updates free for life</p>
+</section>
+
+<footer class="wrap">
+  <p>© 2026 Victou · Made for the people stuck in the "planning to leave" loop · <a href="mailto:victoire.bb@icloud.com">contact</a></p>
+</footer>
+
+</body>
+</html>
