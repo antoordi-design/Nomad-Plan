@@ -84,6 +84,17 @@
   summary::after{content:"+";color:var(--accent);font-weight:700;font-size:20px}
   details[open] summary::after{content:"−"}
   details p{margin-top:14px;color:#c8c8c8;font-size:14px;line-height:1.6}
+  /* SIGNUP */
+  .signup-section{padding:70px 0;border-bottom:1px solid var(--line);text-align:center}
+  .signup-section h2{margin-bottom:14px}
+  .signup-section .lede-2{margin:0 auto 30px;max-width:520px}
+  .signup-form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap}
+  .signup-form input[type="email"]{flex:1;min-width:240px;padding:18px 22px;border-radius:100px;border:1px solid var(--line);background:var(--bg-2);color:var(--ink);font-size:16px;font-family:inherit;outline:none;transition:border-color 0.15s ease}
+  .signup-form input[type="email"]:focus{border-color:var(--accent)}
+  .signup-form input[type="email"]::placeholder{color:#666}
+  .signup-form button{background:var(--accent);color:#0a0a0a;font-weight:800;font-size:16px;padding:18px 28px;border-radius:100px;border:none;cursor:pointer;font-family:inherit;letter-spacing:-0.01em;transition:transform 0.15s ease}
+  .signup-form button:hover{transform:translateY(-1px)}
+  .signup-note{font-size:13px;color:var(--muted);margin-top:18px}
   /* FINAL CTA */
   .final{padding:90px 0;text-align:center;border-bottom:1px solid var(--line)}
   .final h2{font-size:clamp(34px,6vw,56px);margin-bottom:20px}
@@ -293,6 +304,14 @@
       <p>Because you've already read the free version on Reddit and Medium for two years and you still haven't moved. The price is a commitment device. If $39 changes your mind, this isn't your plan.</p>
     </details>
   </div>
+</section>
+
+<!-- SIGNUP / LEAD MAGNET -->
+<section class="wrap signup-section">
+  <h2>Not ready for $39? <span>Start free.</span></h2>
+  <p class="lede-2">Drop your email — I'll send you the Runway Calculator. Plug in your savings and burn rate, see your true cliff date. The free taste of the plan.</p>
+  <a class="btn" href="https://preview.mailerlite.io/forms/2326432/186800071436666420/share" target="_blank" rel="noopener">Send me the calculator</a>
+  <p class="signup-note">Free forever · No spam · Unsubscribe in one click</p>
 </section>
 
 <!-- FINAL CTA -->
