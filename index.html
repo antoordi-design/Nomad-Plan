@@ -95,6 +95,8 @@
   .signup-form button{background:var(--accent);color:#0a0a0a;font-weight:800;font-size:16px;padding:18px 28px;border-radius:100px;border:none;cursor:pointer;font-family:inherit;letter-spacing:-0.01em;transition:transform 0.15s ease}
   .signup-form button:hover{transform:translateY(-1px)}
   .signup-note{font-size:13px;color:var(--muted);margin-top:18px}
+  .signup-success{background:var(--accent-soft);border:1px solid rgba(212,255,61,0.3);border-radius:14px;padding:24px 28px;max-width:480px;margin:0 auto}
+  .signup-success p{font-size:16px;color:var(--accent);font-weight:700;margin:0;line-height:1.5}
   /* FINAL CTA */
   .final{padding:90px 0;text-align:center;border-bottom:1px solid var(--line)}
   .final h2{font-size:clamp(34px,6vw,56px);margin-bottom:20px}
@@ -310,12 +312,15 @@
 <section class="wrap signup-section">
   <h2>Not ready for $39? <span>Start free.</span></h2>
   <p class="lede-2">Drop your email — I'll send you the Runway Calculator. Plug in your savings and burn rate, see your true cliff date. The free taste of the plan.</p>
-  <form class="signup-form" action="https://assets.mailerlite.com/jsonp/2326432/forms/186800071436666420/subscribe" method="post" target="_blank">
+  <form class="signup-form" id="signup-form" action="https://assets.mailerlite.com/jsonp/2326432/forms/186800071436666420/subscribe" method="post">
     <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="email">
     <button type="submit">Send me the calculator</button>
     <input type="hidden" name="ml-submit" value="1">
     <input type="hidden" name="anticsrf" value="true">
   </form>
+  <div id="signup-success" class="signup-success" style="display:none">
+    <p>✓ You're in. Check your inbox — the Runway Calculator is on its way.</p>
+  </div>
   <p class="signup-note">Free forever · No spam · Unsubscribe in one click</p>
 </section>
 
@@ -331,5 +336,26 @@
   <p>© 2026 Broke Millionaire · Made for the people stuck in the "planning to leave" loop</p>
 </footer>
 
+<script>
+(function(){
+  var form = document.getElementById('signup-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var origText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch(form.action, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new FormData(form)
+    }).finally(function(){
+      form.style.display = 'none';
+      document.getElementById('signup-success').style.display = 'block';
+    });
+  });
+})();
+</script>
 </body>
 </html>
